@@ -2,10 +2,10 @@ const buttons = document.querySelectorAll('.button');
 const userInput = document.getElementById('user-input');
 const userDisplay = document.getElementById('user-display');
 
+// Reset display
 function hideAnswers() {
   const answer = document.querySelectorAll('.answer');
 
-  // Hide all answers first
   for (let i = 0; i < answer.length; i++) {
     if (!answer[i].classList.contains('hidden')) {
       answer[i].classList.add('hidden');
@@ -21,10 +21,31 @@ function computerPlay() {
   return result;
 }
 
+// Check to see who reaches 5 points first & displays overlay
+function determineWinner(userScore, opponentScore) {
+  const overlay = document.getElementById('overlay');
+  const overlayText = document.getElementById('overlay-text');
+  if (userScore === 5) {
+    overlay.style.display = 'flex';
+    overlay.style.backgroundColor = '#5ac18e';
+    overlayText.textContent = 'You Win!';
+  } else if (opponentScore === 5) {
+    overlay.style.display = 'flex';
+    overlay.style.backgroundColor = '#FF7373';
+    overlayText.textContent = 'You Lose!';
+  }
+}
+
+let UserNum = 0;
+let OpNum = 0;
+
 function playRound(playerSelection, computerSelection) {
   const resultText = document.getElementById('result-text');
   const userDisplay = document.getElementById('user-display');
   const OpponentDisplay = document.getElementById('opponent-display');
+  const userScore = document.getElementById('user-score');
+  const opponentScore = document.getElementById('opponent-score');
+
   playerSelection.toLowerCase();
 
   if (playerSelection === computerSelection) {
@@ -32,29 +53,47 @@ function playRound(playerSelection, computerSelection) {
     userDisplay.style.backgroundColor = 'lightgrey';
     OpponentDisplay.style.backgroundColor = 'lightgrey';
   } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
+    OpNum++;
     resultText.textContent = 'You Lose! Scissors beat Paper';
     userDisplay.style.backgroundColor = '#FF7373';
     OpponentDisplay.style.backgroundColor = '#5AC18E';
+    opponentScore.textContent = OpNum;
+    determineWinner(UserNum, OpNum);
   } else if (playerSelection === 'paper' && computerSelection === 'rock') {
+    UserNum++;
     resultText.textContent = 'You Win! Paper beats Rock';
     userDisplay.style.backgroundColor = '#5AC18E';
     OpponentDisplay.style.backgroundColor = '#FF7373';
+    userScore.textContent = UserNum;
+    determineWinner(UserNum, OpNum);
   } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+    OpNum++;
     resultText.textContent = 'You Lose! Rock beats Scissors';
     userDisplay.style.backgroundColor = '#FF7373';
     OpponentDisplay.style.backgroundColor = '#5AC18E';
+    opponentScore.textContent = OpNum;
+    determineWinner(UserNum, OpNum);
   } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
+    UserNum++;
     resultText.textContent = 'You Win! Scissors beats Paper';
     userDisplay.style.backgroundColor = '#5AC18E';
     OpponentDisplay.style.backgroundColor = '#FF7373';
+    userScore.textContent = UserNum;
+    determineWinner(UserNum, OpNum);
   } else if (playerSelection === 'rock' && computerSelection === 'paper') {
+    OpNum++;
     resultText.textContent = 'You Lose! Paper beats Rock';
     userDisplay.style.backgroundColor = '#FF7373';
     OpponentDisplay.style.backgroundColor = '#5AC18E';
+    opponentScore.textContent = OpNum;
+    determineWinner(UserNum, OpNum);
   } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
+    UserNum++;
     resultText.textContent = 'You Win! Rock beats Scissors';
     userDisplay.style.backgroundColor = '#5AC18E';
     OpponentDisplay.style.backgroundColor = '#FF7373';
+    userScore.textContent = UserNum;
+    determineWinner(UserNum, OpNum);
   } else {
     resultText.textContent = 'error';
   }

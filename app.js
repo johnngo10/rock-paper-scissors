@@ -1,12 +1,3 @@
-// import { library, icons } from '@fortawesome/fontawesome-svg-core';
-// import {
-//   faHandScissors,
-//   faHandPaper,
-//   faHandRock,
-// } from '@fortawesome/free-solid-svg-icons';
-
-// library.add(faHandScissors, faHandPaper, faHandRock);
-
 const buttons = document.querySelectorAll('.button');
 const userInput = document.getElementById('user-input');
 const userDisplay = document.getElementById('user-display');
@@ -32,24 +23,40 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
   const resultText = document.getElementById('result-text');
+  const userDisplay = document.getElementById('user-display');
+  const OpponentDisplay = document.getElementById('opponent-display');
   playerSelection.toLowerCase();
 
   if (playerSelection === computerSelection) {
     resultText.textContent = 'Draw';
+    userDisplay.style.backgroundColor = 'lightgrey';
+    OpponentDisplay.style.backgroundColor = 'lightgrey';
   } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-    return 'You Lose! Scissors beat Paper';
+    resultText.textContent = 'You Lose! Scissors beat Paper';
+    userDisplay.style.backgroundColor = '#FF7373';
+    OpponentDisplay.style.backgroundColor = '#5AC18E';
   } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-    return 'You Win! Paper beats Rock';
+    resultText.textContent = 'You Win! Paper beats Rock';
+    userDisplay.style.backgroundColor = '#5AC18E';
+    OpponentDisplay.style.backgroundColor = '#FF7373';
   } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-    return 'You Lose! Rock beats Scissors';
+    resultText.textContent = 'You Lose! Rock beats Scissors';
+    userDisplay.style.backgroundColor = '#FF7373';
+    OpponentDisplay.style.backgroundColor = '#5AC18E';
   } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-    return 'You Win! Scissors beats Paper';
+    resultText.textContent = 'You Win! Scissors beats Paper';
+    userDisplay.style.backgroundColor = '#5AC18E';
+    OpponentDisplay.style.backgroundColor = '#FF7373';
   } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-    return 'You Lose! Paper beats Rock';
+    resultText.textContent = 'You Lose! Paper beats Rock';
+    userDisplay.style.backgroundColor = '#FF7373';
+    OpponentDisplay.style.backgroundColor = '#5AC18E';
   } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-    return 'You Win! Rock beats Scissors';
+    resultText.textContent = 'You Win! Rock beats Scissors';
+    userDisplay.style.backgroundColor = '#5AC18E';
+    OpponentDisplay.style.backgroundColor = '#FF7373';
   } else {
-    return 'error';
+    resultText.textContent = 'error';
   }
 }
 
@@ -100,5 +107,3 @@ for (let i = 0; i < buttons.length; i++) {
     playRound(target, opponentAnswer);
   });
 }
-
-// game();

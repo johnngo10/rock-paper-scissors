@@ -30,7 +30,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    let playerSelection = window.prompt('Enter rock, paper or scissors!');
+    // let playerSelection = window.prompt('Enter rock, paper or scissors!');
     let computerSelection = computerPlay();
 
     console.log(playRound(playerSelection, computerSelection));

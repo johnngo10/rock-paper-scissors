@@ -3,9 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+      integrity="sha384-9/D4ECZvKMVEJ9Bhr3ZnUAF+Ahlagp1cyPC7h5yDlZdXs4DQ/vRftzfd+2uFUuqS"
+      crossorigin="anonymous"
+    ></script>
     <title>Rock Paper Scissors</title>
   </head>
   <body>
+    <header>
+      <h1 id="title">ROCK PAPER SCISSORS</h1>
+    </header>
+    <main>
+      <div id="results">
+        <p>You Win! Paper beats Rock</p>
+      </div>
+      <div id="display">
+        <div class="display-input">
+          <h3 class="player-title">You</h3>
+          <i class="fas fa-hand-paper answer"></i>
+        </div>
+        <div class="display-input">
+          <h3 class="player-title">Computer</h3>
+          <i class="fas fa-hand-scissors answer"></i>
+        </div>
+      </div>
+      <div id="buttons">
+        <button id="rock" class="button">
+          <i class="far fa-hand-rock button-icon"></i>
+        </button>
+        <button id="paper" class="button">
+          <i class="far fa-hand-paper button-icon"></i>
+        </button>
+        <button id="scissors" class="button">
+          <i class="far fa-hand-scissors button-icon"></i>
+        </button>
+      </div>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
+
+<!--<i class="fas fa-hand-paper"></i>  <i class="fas fa-hand-rock"></i>  <i class="fas fa-hand-scissors"></i>-->

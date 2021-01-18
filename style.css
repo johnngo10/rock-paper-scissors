@@ -1,0 +1,99 @@
+/* Reset */
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  background-color: lightyellow;
+}
+
+/* header */
+
+header {
+  margin: 20px;
+  text-align: center;
+}
+
+/* main */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+  border: none;
+  border-radius: 5px;
+  background-color: lightslategray;
+}
+
+#results {
+  padding: 20px;
+  color: white;
+}
+
+#display {
+  display: flex;
+  align-items: center;
+  width: 800px;
+  height: 40vh;
+  justify-content: space-between;
+}
+
+.display-input {
+  width: 45%;
+  height: 100%;
+  text-align: center;
+  border: 3px solid black;
+}
+
+.player-title {
+  background-color: lightskyblue;
+  border-bottom: 1px solid black;
+}
+
+.answer {
+  height: 100%;
+  font-size: 150px;
+}
+
+/* buttons */
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 200px;
+  width: 800px;
+}
+
+.button {
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: lightblue;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: #72bcd4;
+}
+
+.button:focus {
+  outline: none;
+}
+
+.button-icon {
+  font-size: 50px;
+  color: white;
+}

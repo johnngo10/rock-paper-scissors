@@ -18,16 +18,24 @@
     </header>
     <main>
       <div id="results">
-        <p>You Win! Paper beats Rock</p>
+        <p id="result-text">You Win! Paper beats Rock</p>
       </div>
       <div id="display">
-        <div class="display-input">
+        <div id="user-display" class="display-input">
           <h3 class="player-title">You</h3>
-          <i class="fas fa-hand-paper answer"></i>
+          <i id="user-paper" class="fas fa-hand-paper answer hidden"></i>
+          <i id="user-rock" class="fas fa-hand-rock answer hidden"></i>
+          <i id="user-scissors" class="fas fa-hand-scissors answer hidden"></i>
         </div>
-        <div class="display-input">
-          <h3 class="player-title">Computer</h3>
-          <i class="fas fa-hand-scissors answer"></i>
+        <p id="vs">vs</p>
+        <div id="opponent-display" class="display-input">
+          <h3 class="player-title">Opponent</h3>
+          <i id="opponent-paper" class="fas fa-hand-paper answer hidden"></i>
+          <i id="opponent-rock" class="fas fa-hand-rock answer hidden"></i>
+          <i
+            id="opponent-scissors"
+            class="fas fa-hand-scissors answer hidden"
+          ></i>
         </div>
       </div>
       <div id="buttons">
@@ -46,4 +54,4 @@
   </body>
 </html>
 
-<!--<i class="fas fa-hand-paper"></i>  <i class="fas fa-hand-rock"></i>  <i class="fas fa-hand-scissors"></i>-->
+<!--<i class="fas fa-hand-paper answer"></i>  <i class="fas fa-hand-rock answer"></i>  <i class="fas fa-hand-scissors answer"></i>-->
